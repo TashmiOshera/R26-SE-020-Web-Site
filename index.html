@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkWave | AI-Powered Local Services</title>
+    <meta name="description" content="WorkWave - On-Demand Home & Personal Services Platform">
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 1. Top Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">WorkWave.</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fa-solid fa-house nav-icon"></i> Home</a></li>
+                
+                <!-- Domain Dropdown -->
+                <li class="nav-dropdown">
+                    <a href="#domain" class="dropdown-trigger">
+                        <i class="fa-solid fa-diagram-project nav-icon"></i> Domain <i class="fa-solid fa-chevron-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#domain" onclick="openDomainTab('tab-lit-survey')"><i class="fa-solid fa-book-open"></i> Literature Survey</a></li>
+                        <li><a href="#domain" onclick="openDomainTab('tab-research-gap')"><i class="fa-solid fa-magnifying-glass-chart"></i> Research Gap</a></li>
+                        <li><a href="#domain" onclick="openDomainTab('tab-problem')"><i class="fa-solid fa-bullseye"></i> Research Problem</a></li>
+                        <li><a href="#domain" onclick="openDomainTab('tab-objectives')"><i class="fa-solid fa-rocket"></i> Objectives</a></li>
+                        <li><a href="#domain" onclick="openDomainTab('tab-methodology')"><i class="fa-solid fa-gears"></i> Methodology</a></li>
+                        <li><a href="#domain" onclick="openDomainTab('tab-contributions')"><i class="fa-solid fa-lightbulb"></i> Contribution & Future Work</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a href="#technologies"><i class="fa-solid fa-microchip"></i> Technologies Used</a></li>
+                        <li><a href="#architecture"><i class="fa-solid fa-network-wired"></i> System Architecture</a></li>
+                        <li><a href="#procedure"><i class="fa-solid fa-timeline"></i> Study Procedure (8 Phases)</a></li>
+                    </ul>
+                </li>
+
+                <!-- Research Contribution & Future Work Direct Link -->
+                <li><a href="#research-contribution"><i class="fa-solid fa-award nav-icon"></i> Contribution</a></li>
+
+                <!-- Challenges Standalone Page Link -->
+                <li><a href="challenges.html"><i class="fa-solid fa-triangle-exclamation nav-icon"></i> Challenges</a></li>
+
+                <!-- Milestones Dropdown -->
+                <li class="nav-dropdown">
+                    <a href="#milestones" class="dropdown-trigger">
+                        <i class="fa-solid fa-flag-checkered nav-icon"></i> Milestones <i class="fa-solid fa-chevron-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#ms-proposal" onclick="highlightMilestone('ms-proposal')"><i class="fa-solid fa-file-lines"></i> Project Proposal (12%)</a></li>
+                        <li><a href="#ms-pp1" onclick="highlightMilestone('ms-pp1')"><i class="fa-solid fa-chart-column"></i> Progress Presentation-1 (15%)</a></li>
+                        <li><a href="#ms-pp2" onclick="highlightMilestone('ms-pp2')"><i class="fa-solid fa-chart-line"></i> Progress Presentation-2 (18%)</a></li>
+                        <li><a href="#ms-final" onclick="highlightMilestone('ms-final')"><i class="fa-solid fa-award"></i> Final Presentation & Viva (20%)</a></li>
+                    </ul>
+                </li>
+
+                <!-- Documents Dropdown -->
+                <li class="nav-dropdown">
+                    <a href="#documents" class="dropdown-trigger">
+                        <i class="fa-solid fa-folder-open nav-icon"></i> Documents <i class="fa-solid fa-chevron-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#doc-charter" onclick="highlightDoc('doc-charter')"><i class="fa-solid fa-file-contract"></i> Project Charter</a></li>
+                        <li><a href="#doc-proposal" onclick="highlightDoc('doc-proposal')"><i class="fa-solid fa-file-lines"></i> Proposal Document</a></li>
+                        <li><a href="#doc-checklist" onclick="highlightDoc('doc-checklist')"><i class="fa-solid fa-list-check"></i> Checklist Documents</a></li>
+                        <li><a href="#doc-final" onclick="highlightDoc('doc-final')"><i class="fa-solid fa-book"></i> Final Documents</a></li>
+                    </ul>
+                </li>
+
+                <!-- Project Presentation / Demo Video Link -->
+                <li><a href="#presentation-video"><i class="fa-brands fa-youtube nav-icon" style="color: #ef4444;"></i> Video</a></li>
+
+                <li><a href="#about"><i class="fa-solid fa-users nav-icon"></i> About Us</a></li>
+                <li><a href="#contact" class="btn outline-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. Home Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text-box">
+                    <h1 class="fade-in">WorkWave</h1>
+                    <h2 class="fade-in delay-1">Project Abstract</h2>
+                    <p class="fade-in delay-2">
+                        An innovative, AI-powered MicroLocal platform designed to support micro-entrepreneurs. We seamlessly connect local service providers with customers by combining intelligent matching mechanisms, automated AI issue diagnostics, computer vision-based fraud detection, and predictive demand forecasting with a robust trust governance engine. Together, these technologies drastically improve visibility, security, and operational efficiency within your community.
+                    </p>
+
+                    <!-- Navigational Aids / Table of Contents -->
+                    <div class="toc-box fade-in delay-3">
+                        <h3><i class="fa-solid fa-compass" style="margin-right: 10px; color: var(--primary-color);"></i>Quick Navigation</h3>
+                        <ul class="toc-list">
+                            <li><a href="#domain"><i class="fa-solid fa-diagram-project toc-link-icon"></i>Domain Details</a></li>
+                            <li><a href="#research-contribution"><i class="fa-solid fa-award toc-link-icon"></i>Research Contribution</a></li>
+                            <li><a href="challenges.html"><i class="fa-solid fa-triangle-exclamation toc-link-icon"></i>Challenges & Solutions</a></li>
+                            <li><a href="#milestones"><i class="fa-solid fa-flag-checkered toc-link-icon"></i>Project Milestones</a></li>
+                            <li><a href="#documents"><i class="fa-solid fa-folder-open toc-link-icon"></i>Official Documents</a></li>
+                            <li><a href="#presentation-video"><i class="fa-brands fa-youtube toc-link-icon" style="color: #ef4444;"></i>Project Video / Demo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="hero-buttons fade-in delay-3">
+                        <a href="#domain" class="btn primary-btn">Explore Project</a>
+                        <a href="#milestones" class="btn secondary-btn">View Progress</a>
+                    </div>
+                </div>
+
+                <!-- Fast-loading, optimized SVG graphic -->
+                <div class="hero-graphic fade-in delay-2">
+                    <img src="img/hero.jpg" alt="WorkWave AI Platform"
+                        style="width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 2px solid var(--border-color);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Domain Section -->
+        <section id="domain" class="section-bg-alt">
+            <div class="container">
+                <h2 class="section-title">Project <span>Domain</span></h2>
+                
+
+                <div class="domain-image-wrapper fade-in delay-1">
+                    <div class="domain-image-container">
+                        <div class="domain-image-glow"></div>
+                        <img src="img/domain-ai.png" alt="Project Domain - AI Architecture" class="domain-image">
+                    </div>
+                    
+                </div>
+
+                <p class="fade-in delay-2"
+                    style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 10px auto 40px; font-size: 1.1rem;">
+                    This section has domain details about our project. Here we describe the information we have gathered
+                    by the literature survey, our objectives, and the methodology.
+                </p>
+
+                <div class="tabs-container" style="margin-top: 0;">
+                    <div class="tabs-sidebar">
+                        <button class="tab-btn active" onclick="openDomainTab('tab-lit-survey')"><span
+                                class="tab-icon"><i class="fa-solid fa-book-open"></i></span> Literature Survey</button>
+                        <button class="tab-btn" onclick="openDomainTab('tab-research-gap')"><span
+                                class="tab-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span> Research Gap</button>
+                        <button class="tab-btn" onclick="openDomainTab('tab-problem')"><span class="tab-icon"><i class="fa-solid fa-bullseye"></i></span>
+                            Research Problem</button>
+                        <button class="tab-btn" onclick="openDomainTab('tab-objectives')"><span
+                                class="tab-icon"><i class="fa-solid fa-rocket"></i></span> Research Objectives</button>
+                        <button class="tab-btn" onclick="openDomainTab('tab-methodology')"><span
+                                class="tab-icon"><i class="fa-solid fa-gears"></i></span> Methodology</button>
+                        <button class="tab-btn" onclick="openDomainTab('tab-contributions')"><span
+                                class="tab-icon"><i class="fa-solid fa-lightbulb"></i></span> Contribution & Next Steps</button>
+                    </div>
+
+                    <div class="tabs-content">
+                        <!-- Tab 1: Literature Survey -->
+                        <div id="tab-lit-survey" class="tab-pane active fade-in" style="display:block;">
+                            <div class="card hover-lift" style="margin:0;">
+                                <h3>Literature Survey</h3>
+                                <p style="margin-bottom: 15px;">Existing research has explored several AI-based
+                                    approaches for improving digital service platforms:</p>
+                                <ul class="styled-list" style="margin-bottom: 15px;">
+                                    <li><strong>AI-based Service Recognition</strong> – identifies and interprets
+                                        service requirements from user inputs.</li>
+                                    <li><strong>Provider Recommendation</strong> – helps identify suitable service
+                                        providers based on user requirements.</li>
+                                    <li><strong>Predictive Scheduling</strong> – considers provider availability and
+                                        service constraints for better scheduling.</li>
+                                    <li><strong>Demand Forecasting</strong> – predicts future service demand using
+                                        historical and contextual data.</li>
+                                    <li><strong>Generative AI</strong> – supports automated creation of service-related
+                                        promotional content.</li>
+                                </ul>
+                                <p style="color: var(--primary-color);"><strong>Research observation:</strong> Many
+                                    existing approaches focus on individual functions rather than addressing the
+                                    complete local service marketplace lifecycle.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Research Gap -->
+                        <div id="tab-research-gap" class="tab-pane fade-in" style="display:none;">
+                            <div class="card hover-lift" style="margin:0;">
+                                <h3>Research Gap</h3>
+                                <p style="margin-bottom: 15px;">Despite the growing use of AI in digital service
+                                    platforms, several gaps remain:</p>
+                                <ul class="styled-list" style="margin-bottom: 15px;">
+                                    <li><strong>Fragmented AI Solutions</strong> – Existing studies often address
+                                        service recognition, provider recommendation, scheduling, or demand forecasting
+                                        separately.</li>
+                                    <li><strong>Limited Provider Evidence</strong> – Provider capabilities are commonly
+                                        based on self-declared skills rather than completed-work evidence.</li>
+                                    <li><strong>Limited Context Integration</strong> – Information generated at one
+                                        stage is not consistently carried through the entire service lifecycle.</li>
+                                    <li><strong>Limited Support for Local Providers</strong> – Small-scale service
+                                        providers often lack integrated tools for service representation and automated
+                                        promotion.</li>
+                                    <li><strong>Uncertainty Handling</strong> – Many systems require stronger mechanisms
+                                        for handling uncertain AI predictions before using them in marketplace
+                                        decisions.</li>
+                                </ul>
+                                <p style="color: var(--primary-color);"><strong>Research Need:</strong> A unified
+                                    approach is required to connect these capabilities while maintaining reliable and
+                                    context-aware information throughout the local service marketplace lifecycle.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3: Research Problem -->
+                        <div id="tab-problem" class="tab-pane fade-in" style="display:none;">
+                            <div class="card hover-lift" style="margin:0;">
+                                <h3>Research Problem</h3>
+                                <p style="margin-bottom: 15px;">Local service providers often struggle to build a
+                                    professional digital presence and reach suitable customers, while customers face
+                                    difficulties finding reliable and capable providers. Existing solutions generally
+                                    address individual aspects such as service discovery, matching, or booking rather
+                                    than providing an integrated AI-driven solution.</p>
+                                <p style="color: var(--primary-color);"><strong>Therefore, there is a need for an
+                                        AI-driven platform that connects customers and local service providers while
+                                        supporting intelligent service discovery, provider matching, portfolio
+                                        management, and proactive recommendations.</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Tab 4: Research Objectives -->
+                        <div id="tab-objectives" class="tab-pane fade-in" style="display:none;">
+                            <div class="card hover-lift" style="margin:0;">
+                                <h3>Research Objectives</h3>
+                                <ul class="styled-list">
+                                    <li><strong>Develop an AI-driven local service platform</strong> – Connect customers
+                                        and local service providers through an intelligent digital platform.</li>
+                                    <li><strong>Improve service discovery and provider matching</strong> – Use AI to
+                                        understand service requirements and recommend suitable providers based on
+                                        relevant factors.</li>
+                                    <li><strong>Support providers with AI-powered tools</strong> – Enable automated
+                                        portfolio creation, service categorization, and professional advertisement
+                                        generation.</li>
+                                    <li><strong>Enable proactive service demand management</strong> – Use demand
+                                        forecasting to identify future service needs and provide timely notifications to
+                                        customers and providers.</li>
+                                    <li><strong>Evaluate the effectiveness of the proposed system</strong> – Assess the
+                                        system’s accuracy, usability, performance, and user satisfaction through
+                                        experiments and user feedback.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Tab 5: Methodology -->
+                        <div id="tab-methodology" class="tab-pane fade-in" style="display:none;">
+                            <div class="card hover-lift" style="margin:0;">
+                                <h3>Methodology</h3>
+                                <p style="margin-bottom: 15px;">The proposed system follows a design-and-development
+                                    methodology to integrate AI techniques into a unified local service marketplace. The
+                                    methodology includes data collection, AI model development, system integration, and
+                                    evaluation.</p>
+                                <h4 style="color: #fff; margin-bottom: 10px; font-size: 1.1rem;">Main Steps:</h4>
+                                <ul class="styled-list" style="margin-bottom: 15px;">
+                                    <li><strong>Data Collection & Preprocessing</strong> – Collect and prepare
+                                        service-related images and marketplace data.</li>
+                                    <li><strong>AI Model Development</strong> – Apply image classification, service
+                                        recognition, provider recommendation, and demand forecasting techniques.</li>
+                                    <li><strong>System Development</strong> – Integrate the AI models with the customer,
+                                        provider, and marketplace modules.</li>
+                                    <li><strong>AI-Assisted Services</strong> – Generate provider advertisements,
+                                        recommend suitable providers, and provide proactive demand notifications.</li>
+                                    <li><strong>Evaluation</strong> – Evaluate model performance, system functionality,
+                                        usability, and user feedback.</li>
+                                </ul>
+                                <p style="color: var(--primary-color);">This follows the common approach of combining
+                                    AI-based service understanding, matching, and marketplace functions into an
+                                    integrated workflow.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tab 6: Research Contribution & Future Work -->
+                        <div id="tab-contributions" class="tab-pane fade-in" style="display:none;">
+                            <div class="card hover-lift" style="margin:0;">
+                                <h3>Research Contribution & Future Work</h3>
+                                
+                                <div style="margin-bottom: 22px; background: rgba(250, 204, 21, 0.07); padding: 22px 24px; border-radius: 14px; border-left: 4px solid var(--primary-color);">
+                                    <h4 style="color: var(--primary-color); font-size: 1.18rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fa-solid fa-award"></i> Research Contribution
+                                    </h4>
+                                    <p style="margin: 0; color: var(--text-color); font-size: 1.05rem; line-height: 1.75;">
+                                        The research contributes to the design and development of an integrated, AI-driven platform that supports local service discovery, service request management, provider coordination, and demand forecasting. The proposed multi-component architecture aims to improve the accessibility and efficiency of local service interactions by connecting service seekers with suitable providers while supporting service coordination and data-driven decision-making.
+                                    </p>
+                                </div>
+
+                                <div style="background: rgba(56, 189, 248, 0.07); padding: 22px 24px; border-radius: 14px; border-left: 4px solid #38bdf8;">
+                                    <h4 style="color: #38bdf8; font-size: 1.18rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fa-solid fa-rocket"></i> Future Work & Reliability
+                                    </h4>
+                                    <p style="margin: 0; color: var(--text-color); font-size: 1.05rem; line-height: 1.75;">
+                                        Future work will focus on validating the integration of shared interfaces across components, conducting systematic end-to-end testing, and improving the consistency and traceability of individual contributions and reported forecasting results to strengthen the reliability and overall quality of the research outcomes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Technologies Section -->
+        <section id="technologies">
+            <div class="container">
+                <h2 class="section-title">Technologies <span>Used</span></h2>
+                <p
+                    style="text-align: center; color: var(--text-muted); max-width: 700px; margin: -40px auto 50px; font-size: 1.1rem;">
+                    Modern stack powering our innovative local service platform solutions.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px;">
+                    <!-- Tech Items -->
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                                alt="Node.js" style="height: 48px;"></div>
+                        <div class="tech-name">Node.js</div>
+                        <div class="tech-cat">Backend</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+                                alt="Express" class="invert-dark" style="height: 48px;"></div>
+                        <div class="tech-name">Express.js</div>
+                        <div class="tech-cat">Framework</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                                alt="MongoDB" style="height: 48px;"></div>
+                        <div class="tech-name">MongoDB</div>
+                        <div class="tech-cat">Database</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"
+                                alt="TensorFlow" style="height: 48px;"></div>
+                        <div class="tech-name">TensorFlow</div>
+                        <div class="tech-cat">Machine Learning</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://img.icons8.com/color/96/artificial-intelligence.png"
+                                alt="MobileNetV2" style="height: 48px;"></div>
+                        <div class="tech-name">MobileNetV2</div>
+                        <div class="tech-cat">AI Vision</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://img.icons8.com/color/96/google-logo.png" alt="Gemini"
+                                style="height: 48px;"></div>
+                        <div class="tech-name">Gemini API</div>
+                        <div class="tech-cat">Generative AI</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://img.icons8.com/color/96/document.png" alt="OCR"
+                                style="height: 48px;"></div>
+                        <div class="tech-name">Tesseract.js</div>
+                        <div class="tech-cat">OCR</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg"
+                                alt="Socket.io" class="invert-dark" style="height: 48px;"></div>
+                        <div class="tech-name">Socket.io</div>
+                        <div class="tech-cat">Real-time</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://img.icons8.com/color/96/key.png" alt="Security"
+                                style="height: 48px;"></div>
+                        <div class="tech-name">JWT & Bcrypt</div>
+                        <div class="tech-cat">Security</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://img.icons8.com/color/96/network.png"
+                                alt="Microservices" style="height: 48px;"></div>
+                        <div class="tech-name">Microservices</div>
+                        <div class="tech-cat">Architecture</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://img.icons8.com/color/96/api.png" alt="API Gateway"
+                                style="height: 48px;"></div>
+                        <div class="tech-name">API Gateway</div>
+                        <div class="tech-cat">Routing</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                                alt="React Native" style="height: 48px;"></div>
+                        <div class="tech-name">React Native (Expo)</div>
+                        <div class="tech-cat">Mobile Apps</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                                alt="React.js" style="height: 48px;"></div>
+                        <div class="tech-name">React.js</div>
+                        <div class="tech-cat">Admin Dashboard</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                alt="Python" style="height: 44px; margin-right: 3px;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"
+                                alt="Flask" class="invert-dark" style="height: 44px;"></div>
+                        <div class="tech-name">Python (Flask)</div>
+                        <div class="tech-cat">ML Backend</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
+                                alt="Scikit-learn" style="height: 48px;"></div>
+                        <div class="tech-name">Scikit-learn</div>
+                        <div class="tech-cat">Random Forest</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
+                                alt="FastAPI" style="height: 44px; margin-right: 3px;"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"
+                                alt="PyTorch" style="height: 44px;"></div>
+                        <div class="tech-name">FastAPI & PyTorch</div>
+                        <div class="tech-cat">Computer Vision</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fa-solid fa-cloud-sun" style="font-size: 2.5rem; color: #F59E0B;"></i></div>
+                        <div class="tech-name">Open-Meteo & Calendarific</div>
+                        <div class="tech-cat">External APIs</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fa-solid fa-envelopes-bulk" style="font-size: 2.5rem; color: #EA4335;"></i></div>
+                        <div class="tech-name">Nodemailer / SMTP</div>
+                        <div class="tech-cat">Email Service</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.4 System Architecture Section -->
+        <section id="architecture" class="section-bg-alt">
+            <div class="container">
+                <h2 class="section-title fade-in">System <span>Architecture</span></h2>
+                <p class="fade-in delay-1" style="text-align: center; color: var(--text-muted); max-width: 700px; margin: -40px auto 50px; font-size: 1.1rem;">
+                    High-Reliability Marketplace for Professional Services
+                </p>
+                <div class="architecture-diagram fade-in delay-2" style="text-align: center; margin: 20px auto 0; max-width: 1100px;">
+                    <div class="architecture-showcase-container">
+                        <img src="img/system-architecture.jpg" alt="System Architecture Diagram" class="architecture-showcase-img" onclick="window.open(this.src, '_blank')">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.5 Study Procedure Section -->
+
+        <section id="procedure">
+
+            <div class="container">
+
+                <h2 class="section-title">Experimental & <span>Study Procedure</span></h2>
+
+                <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: -40px auto 50px; font-size: 1.1rem;">
+
+                    Interactive visualization of our research and development lifecycle. Click on any phase to view details.
+
+                </p>
+
+                
+
+                <div class="procedure-container">
+
+                    <div class="circle-wrapper">
+
+                        <!-- Central display for content -->
+
+                        <div class="center-content fade-in" id="proc-center">
+
+                            <h3>Select a Phase</h3>
+
+                            <p>Click on any phase surrounding this circle to view detailed information about our procedure.</p>
+
+                        </div>
+
+
+
+                        <!-- Nodes (8 Phases of Study Procedure with Authentic Colorful Icons) -->
+                        <div class="proc-node" data-index="0" style="--i: 0;" onclick="showProcedure(0)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/survey.png" alt="Requirements Gathering"></div>
+                            <span>Requirements Gathering</span>
+                        </div>
+
+                        <div class="proc-node" data-index="1" style="--i: 1;" onclick="showProcedure(1)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/goal--v1.png" alt="Research Problem & Objectives"></div>
+                            <span>Problem & Objectives</span>
+                        </div>
+
+                        <div class="proc-node" data-index="2" style="--i: 2;" onclick="showProcedure(2)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/flow-chart.png" alt="System Design"></div>
+                            <span>System Design</span>
+                        </div>
+
+                        <div class="proc-node" data-index="3" style="--i: 3;" onclick="showProcedure(3)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/module.png" alt="Component Design"></div>
+                            <span>Component Design</span>
+                        </div>
+
+                        <div class="proc-node" data-index="4" style="--i: 4;" onclick="showProcedure(4)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/artificial-intelligence.png" alt="AI Integration"></div>
+                            <span>AI Integration</span>
+                        </div>
+
+                        <div class="proc-node" data-index="5" style="--i: 5;" onclick="showProcedure(5)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/programming.png" alt="Implementation Approach"></div>
+                            <span>Implementation</span>
+                        </div>
+
+                        <div class="proc-node" data-index="6" style="--i: 6;" onclick="showProcedure(6)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/workflow.png" alt="Integration Workflow"></div>
+                            <span>Integration Workflow</span>
+                        </div>
+
+                        <div class="proc-node" data-index="7" style="--i: 7;" onclick="showProcedure(7)">
+                            <div class="proc-icon"><img src="https://img.icons8.com/color/96/approval.png" alt="Testing & Evaluation"></div>
+                            <span>Testing & Evaluation</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Research Contribution & Future Work Section -->
+        <section id="research-contribution" class="section-bg-alt">
+            <div class="container">
+                <h2 class="section-title fade-in">Research <span>Contribution & Future Work</span></h2>
+                <p class="fade-in delay-1" style="text-align: center; color: var(--text-muted); max-width: 820px; margin: -40px auto 45px; font-size: 1.12rem;">
+                    Key scientific contributions delivered by the WorkWave research team, alongside our strategic engineering milestones for future development.
+                </p>
+
+                <!-- Dual-Square Feature Cards -->
+                <div class="contribution-future-squares fade-in delay-2">
+                    <!-- Square Card 1: Primary Contribution / Research Contribution -->
+                    <div class="research-square-card contribution-square hover-lift">
+                        <div class="square-corner-glow"></div>
+                        <div class="square-header">
+                            <div class="square-icon-box gold">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <span class="square-badge gold">Primary Contribution</span>
+                        </div>
+                        <h3 class="square-title">Research Contribution</h3>
+                        <p class="square-desc">
+                            The research contributes to the design and development of an integrated, AI-driven platform that supports local service discovery, service request management, provider coordination, and demand forecasting. The proposed multi-component architecture aims to improve the accessibility and efficiency of local service interactions by connecting service seekers with suitable providers while supporting service coordination and data-driven decision-making.
+                        </p>
+                        <div class="square-footer">
+                            <span><i class="fa-solid fa-check-double"></i> Core Innovation & Multi-Component System</span>
+                        </div>
+                    </div>
+
+                    <!-- Square Card 2: Next Milestones / Future Work -->
+                    <div class="research-square-card future-square hover-lift">
+                        <div class="square-corner-glow"></div>
+                        <div class="square-header">
+                            <div class="square-icon-box cyan">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                            </div>
+                            <span class="square-badge cyan">Next Milestones</span>
+                        </div>
+                        <h3 class="square-title">Future Work</h3>
+                        <p class="square-desc">
+                            Future work will focus on validating the integration of shared interfaces across components, conducting systematic end-to-end testing, and improving the consistency and traceability of individual contributions and reported forecasting results to strengthen the reliability and overall quality of the research outcomes.
+                        </p>
+                        <div class="square-footer">
+                            <span><i class="fa-solid fa-vial-circle-check"></i> Interface Validation, Testing & Reliability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Challenges & Solutions Callout Banner (Placed directly below the dual squares) -->
+                <div class="challenges-banner-card fade-in delay-3" style="margin-top: 50px; background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%); border: 1px solid rgba(250, 204, 21, 0.3); border-radius: 20px; padding: 30px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(250, 204, 21, 0.15); border: 1px solid rgba(250, 204, 21, 0.35); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #fff; font-size: 1.28rem; margin-bottom: 6px; font-weight: 700;">Technical Challenges & Solutions</h4>
+                            <p style="color: var(--text-muted); margin: 0; font-size: 0.98rem; line-height: 1.5;">Explore the 9 core engineering hurdles and how we addressed them across the system lifecycle.</p>
+                        </div>
+                    </div>
+                    <a href="challenges.html" class="btn primary-btn" style="white-space: nowrap; padding: 13px 28px; font-size: 0.96rem;">
+                        View All Challenges <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Milestones Section -->
+        <section id="milestones">
+            <div class="container">
+                <h2 class="section-title">Project <span>Milestones</span></h2>
+                <p
+                    style="text-align: center; color: var(--text-muted); max-width: 700px; margin: -40px auto 50px; font-size: 1.1rem;">
+                    This section describes all assessments in the project, including details, dates, and marks allocated
+                    for each item.
+                </p>
+
+                <div style="max-width: 600px; margin: 0 auto 40px; text-align: center;">
+                    <select id="milestone-dropdown" onchange="showMilestone()"
+                        style="padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); outline: none; cursor: pointer; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <option value="">-- Select a Milestone to View --</option>
+                        <option value="ms-proposal">Project Proposal</option>
+                        <option value="ms-pp1">Progress Presentation-1</option>
+                        <option value="ms-pp2">Progress Presentation-2</option>
+                        <option value="ms-final">Final Presentation & Viva</option>
+                    </select>
+                </div>
+
+                <div class="timeline">
+                    <!-- Milestone 1 -->
+                    <div class="timeline-item" id="ms-proposal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">March 16, 2026</div>
+                        <div class="timeline-content card hover-lift" style="margin: 0; text-align: left;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0; font-size: 1.3rem;"><span
+                                        style="margin-right: 8px;"><i class="fa-solid fa-file-lines"></i></span>Project Proposal</h3>
+                                <span class="status-badge success">12%</span>
+                            </div>
+                            <p style="margin: 0; color: var(--text-muted); margin-bottom: 15px;">Initial scoping,
+                                problem definition, and architecture design approval.</p>
+                            <a href="https://drive.google.com/drive/folders/1lgGaW6Vu-JRZ15jmahZR2x6BYfX3Rv-B?usp=drive_link"
+                                target="_blank" class="drive-btn">
+                                <span style="font-size: 1rem;"><i class="fa-solid fa-folder-open"></i></span> View Documents
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-item" id="ms-pp1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">May 12, 2026</div>
+                        <div class="timeline-content card hover-lift" style="margin: 0; text-align: left;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0; font-size: 1.3rem;"><span
+                                        style="margin-right: 8px;"><i class="fa-solid fa-chart-column"></i></span>Progress Presentation-1</h3>
+                                <span class="status-badge success">15%</span>
+                            </div>
+                            <p style="margin: 0; color: var(--text-muted); margin-bottom: 15px;">Demonstration of core
+                                microservices, database schemas, and initial API routes. <strong>(Expected System
+                                    Completion: 50%)</strong></p>
+                            <a href="https://drive.google.com/file/d/1OXTCEsP_riWClib2lxXkumriyzUTIbKj/view?usp=drive_link"
+                                target="_blank" class="drive-btn">
+                                <span style="font-size: 1rem;"><i class="fa-solid fa-folder-open"></i></span> View Documents
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="timeline-item" id="ms-pp2">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">September 01, 2026</div>
+                        <div class="timeline-content card hover-lift" style="margin: 0; text-align: left;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0; font-size: 1.3rem;"><span
+                                        style="margin-right: 8px;"><i class="fa-solid fa-chart-line"></i></span>Progress Presentation-2</h3>
+                                <span class="status-badge success">18%</span>
+                            </div>
+                            <p style="margin: 0; color: var(--text-muted); margin-bottom: 15px;">Integration of API
+                                Gateway, intelligent matching engine, and authentication flows. <strong>(Expected System
+                                    Completion: 90%)</strong></p>
+                            <a href="https://drive.google.com/file/d/1IK7O7Q-dQc-JSxxceD5zrectUZBdyb0S/view?usp=drive_link"
+                                target="_blank" class="drive-btn">
+                                <span style="font-size: 1rem;"><i class="fa-solid fa-folder-open"></i></span> View Documents
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="timeline-item" id="ms-final">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">October 21, 2026</div>
+                        <div class="timeline-content card hover-lift" style="margin: 0; text-align: left;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0; font-size: 1.3rem;"><span
+                                        style="margin-right: 8px;"><i class="fa-solid fa-flag-checkered"></i></span>Final Presentation & Viva</h3>
+                                <span class="status-badge success">20%</span>
+                            </div>
+                            <p style="margin: 0; color: var(--text-muted);">Full system deployment, documentation
+                                finalization, and final project defense showcasing NFR compliance. <strong>(System
+                                    Completion: 100%)</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Documents Section -->
+        <section id="documents" class="section-bg-alt">
+            <div class="container">
+                <h2 class="section-title">Official <span>Documents</span></h2>
+                <p
+                    style="text-align: center; color: var(--text-muted); max-width: 700px; margin: -40px auto 40px; font-size: 1.1rem;">
+                    This section lists all documents we have already produced and those pending (provided as links) for
+                    users to view.
+                </p>
+                <div style="max-width: 600px; margin: 0 auto 40px; text-align: center;">
+                    <select id="doc-dropdown" onchange="scrollToDocument()"
+                        style="padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); outline: none; cursor: pointer; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <option value="">-- Select a Document to View --</option>
+                        <option value="doc-charter">Project Charter</option>
+                        <option value="doc-proposal">Proposal Document</option>
+                        <option value="doc-checklist">Check List Documents</option>
+                        <option value="doc-final">Final Document</option>
+                    </select>
+                </div>
+
+                <div class="flex-container" style="gap: 30px;">
+                    <!-- Doc 1 -->
+                    <div class="card hover-lift" id="doc-charter"
+                        style="margin: 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 40px; flex: 1 1 300px; max-width: 450px;">
+                        <div style="font-size: 4rem; margin-bottom: 20px; color: var(--primary-color);"><i class="fa-solid fa-file-contract"></i></div>
+                        <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Project Charter </h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px;">The initial project charter defining
+                            the scope, objectives, and participants.</p>
+                        <a href="https://drive.google.com/file/d/195VOMaFr6PDCBF_bRkzH_cRGe9ToHJ9k/view?usp=drive_link"
+                            target="_blank" class="drive-btn">
+                            <span style="font-size: 1rem;"><i class="fa-solid fa-folder-open"></i></span> View Document
+                        </a>
+                    </div>
+
+                    <!-- Doc 2 -->
+                    <div class="card hover-lift" id="doc-proposal"
+                        style="margin: 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 40px; flex: 1 1 300px; max-width: 450px;">
+                        <div style="font-size: 4rem; margin-bottom: 20px; color: var(--primary-color);"><i class="fa-solid fa-file-lines"></i></div>
+                        <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Proposal Document </h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px;">Detailed proposal covering the
+                            literature survey, research gap, and architecture.</p>
+                        <a href="https://drive.google.com/file/d/1c3sQJlBCfnrM2HPZztpfTbbzRtDOSnKj/view?usp=drive_link"
+                            target="_blank" class="drive-btn">
+                            <span style="font-size: 1rem;"><i class="fa-solid fa-folder-open"></i></span> View Document
+                        </a>
+                    </div>
+
+                    <!-- Doc 3 -->
+                    <div class="card hover-lift" id="doc-checklist"
+                        style="margin: 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 40px; flex: 1 1 300px; max-width: 450px;">
+                        <div style="font-size: 4rem; margin-bottom: 20px; color: var(--primary-color);"><i class="fa-solid fa-list-check"></i></div>
+                        <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Check List Documents</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px;">A collection of checklists used for
+                            evaluations and project tracking.</p>
+                        <a href="https://drive.google.com/file/d/12giA6Fq7ZAM08GNI-V_NlttXA8NzUwwp/view?usp=drive_link"
+                            target="_blank" class="drive-btn">
+                            <span style="font-size: 1rem;"><i class="fa-solid fa-folder-open"></i></span> View Document
+                        </a>
+                    </div>
+
+                    <!-- Doc 4 -->
+                    <div class="card hover-lift" id="doc-final"
+                        style="margin: 0; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 40px; flex: 1 1 300px; max-width: 450px;">
+                        <div style="font-size: 4rem; margin-bottom: 20px; color: var(--primary-color);"><i class="fa-solid fa-book"></i></div>
+                        <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Final Document </h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px;">Comprehensive final report including
+                            the main thesis and 4 supplementary documents.</p>
+                        <a href="https://drive.google.com/drive/folders/1tJDODSkHKVIW5s1x8e2m7Eh1hO0Wto3V?usp=drive_link"
+                            target="_blank" class="drive-btn">
+                            <span style="font-size: 1rem;"><i class="fa-solid fa-folder-open"></i></span> View Document
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Presentation & Demonstration Video Section -->
+        <section id="presentation-video">
+            <div class="container">
+                <h2 class="section-title fade-in">Project <span>Demonstration & Video</span></h2>
+                <p class="fade-in delay-1" style="text-align: center; color: var(--text-muted); max-width: 780px; margin: -40px auto 45px; font-size: 1.12rem;">
+                    Watch our end-to-end platform demonstration showcasing AI service discovery, provider coordination, and intelligent scheduling in action.
+                </p>
+
+                <div class="video-showcase-wrapper fade-in delay-2" style="max-width: 960px; margin: 0 auto; text-align: center;">
+                    <div style="position: relative; padding: 18px; border-radius: 26px; background: linear-gradient(145deg, rgba(31, 41, 55, 0.7) 0%, rgba(15, 23, 42, 0.95) 100%); box-shadow: inset 2px 2px 6px rgba(255, 255, 255, 0.12), inset -3px -3px 8px rgba(0, 0, 0, 0.85), 0 25px 50px rgba(0, 0, 0, 0.65); border: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div id="video-frame-box" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 18px; border-top: 2px solid rgba(255, 255, 255, 0.3); border-left: 2px solid rgba(255, 255, 255, 0.22); border-right: 2px solid rgba(0, 0, 0, 0.8); border-bottom: 2px solid rgba(0, 0, 0, 0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.7); background: #000;">
+                            <!-- Interactive Video Poster / Player Facade -->
+                            <div id="video-facade" onclick="playEmbeddedVideo()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; background: url('https://img.youtube.com/vi/6OpWNguj5l8/maxresdefault.jpg') center/cover no-repeat, #0b1120;">
+                                <!-- Dark gradient backdrop for high contrast -->
+                                <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%);"></div>
+                                
+                                <!-- Central Animated Play Button -->
+                                <div class="play-pulse-btn hover-lift" style="position: relative; z-index: 2; width: 88px; height: 88px; border-radius: 50%; background: #ef4444; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; box-shadow: 0 0 40px rgba(239, 68, 68, 0.8), 0 10px 25px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                    <i class="fa-solid fa-play" style="margin-left: 6px;"></i>
+                                </div>
+
+                                <!-- Video Title Badge Over Thumbnail -->
+                                <div style="position: absolute; bottom: 20px; left: 24px; right: 24px; z-index: 2; display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); padding: 12px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                    <div style="text-align: left;">
+                                        <div style="color: var(--primary-color); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 6px;"></i> WorkWave Demonstration</div>
+                                        <div style="color: #fff; font-size: 1.05rem; font-weight: 600;">System Overview & Research Walkthrough</div>
+                                    </div>
+                                    <span style="background: rgba(239, 68, 68, 0.2); color: #fca5a5; font-size: 0.85rem; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.4); font-weight: 600;">
+                                        <i class="fa-solid fa-circle-play" style="margin-right: 4px;"></i> Click to Play
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 25px; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://youtu.be/6OpWNguj5l8" target="_blank" class="btn primary-btn" style="padding: 12px 26px; font-size: 0.98rem; display: inline-flex; align-items: center; gap: 10px;">
+                            <i class="fa-brands fa-youtube" style="font-size: 1.2rem; color: #ef4444;"></i> Watch on YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. About Us Section -->
+        <section id="about" class="section-bg-alt">
+            <div class="container">
+                <h2 class="section-title">About <span>Us</span></h2>
+
+                <div class="grid-container about-grid">
+                    <div class="profile-card hover-lift">
+                        <div class="avatar"><img src="img/kumarasekara.png" alt="K.M.L.P. Kumarasekara" style="object-position: 50% 18%;"></div>
+                        <h3>K.M.J.P. Kumarasekara</h3>
+                        <p class="role">Trainee Software Engineer</p>
+                        <p style="margin-top: 10px; font-weight: bold; font-size: 1.1rem; color: var(--primary-color);">
+                            IT22112064</p>
+                        <div class="profile-socials">
+                            <a href="https://github.com/jeewa-hash" target="_blank" class="social-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jeewanthi-kumarasekara-99143928a/" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-card hover-lift">
+                        <div class="avatar"><img src="img/oshera.jpg" alt="K.A.T. Oshera" style="object-position: 50% 12%;"></div>
+                        <h3>K.A.T. Oshera</h3>
+                        <p class="role">Trainee Software Engineer</p>
+                        <p style="margin-top: 10px; font-weight: bold; font-size: 1.1rem; color: var(--primary-color);">
+                            IT22065612</p>
+                        <div class="profile-socials">
+                            <a href="https://github.com/TashmiOshera" target="_blank" class="social-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/tashmi-oshera-868490330/" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-card hover-lift">
+                        <div class="avatar"><img src="img/nethmi.png" alt="M.N.U. Silva"></div>
+                        <h3>M.N.U. Silva</h3>
+                        <p class="role">Trainee Software Engineer</p>
+                        <p style="margin-top: 10px; font-weight: bold; font-size: 1.1rem; color: var(--primary-color);">
+                            IT22169112</p>
+                        <div class="profile-socials">
+                            <a href="https://github.com/nethmiu" target="_blank" class="social-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nethmiumaya/?isSelfProfile=false" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-card hover-lift">
+                        <div class="avatar"><img src="img/chaveen.jpg" alt="W.A.C.S. Wijesinghe" style="object-position: 50% 15%;"></div>
+                        <h3>W.A.C.S. Wijesinghe</h3>
+                        <p class="role">Trainee Software Engineer</p>
+                        <p style="margin-top: 10px; font-weight: bold; font-size: 1.1rem; color: var(--primary-color);">
+                            IT22129376</p>
+                        <div class="profile-socials">
+                            <a href="https://github.com/chaveenn" target="_blank" class="social-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/chaveen-sewni-wijesinghe/" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements-box fade-in">
+                    <div class="achieve-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="achieve-content">
+                        <h3>Key Project Achievement</h3>
+                        <p>Engineered a highly robust microservices platform capable of handling <strong>50 concurrent
+                                high-load burst threads</strong> with a <strong>0% failure rate</strong> and an average
+                            API latency of <strong>under 400ms</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Contact Us Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In <span>Touch</span></h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Contact Details</h3>
+                        <p>If you have any inquiries regarding the WorkWave platform or our research methodology, please
+                            reach out to us.</p>
+                        <div class="info-item">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span>+94 XX XXX XXXX</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                            <span>contact@workwave-research.local</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <span>Sri Lanka</span>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="sheet-form">
+                        <div class="form-group">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" name="Message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn submit-btn" id="submit-btn">Send Message</button>
+                        <p id="form-msg"
+                            style="margin-top: 15px; font-weight: bold; text-align: center; display: none;"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Center Popup Modal for Study Procedure Details -->
+        <div class="modal-overlay" id="modal-overlay" onclick="closeProcedureModal()"></div>
+        <div class="modal-popup" id="modal-popup">
+            <button class="close-modal-btn" onclick="closeProcedureModal()" aria-label="Close modal">✕</button>
+            <div class="modal-header">
+                <div class="icon" id="sp-icon"><i class="fa-solid fa-clipboard-list" style="font-size: 2rem; color: var(--primary-color);"></i></div>
+                <div>
+                    <span id="sp-phase-tag" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); display: block; margin-bottom: 4px;">Phase 01</span>
+                    <h2 id="sp-title" style="margin: 0;">Requirements Gathering</h2>
+                </div>
+            </div>
+            <div class="modal-content" id="sp-content">
+                <!-- Content injected dynamically via JavaScript -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 WorkWave Project Team. Created for Final Year Assessment.</p>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script>
+            // Google Sheets Form Submission Logic
+            const sheetForm = document.getElementById('sheet-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const formMsg = document.getElementById('form-msg');
+
+            // ඔයා Google Sheet එකෙන් ගන්න URL එක මෙතන (quotes ඇතුලේ) දාන්න
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwcR8EoCaf4W9Ylqt8htb6vSzZ2nhsJMaCQxqW8Z7Pz7yHQp_zrdcKY01vCEgnoZ_c-/exec';
+
+            sheetForm.addEventListener('submit', e => {
+                e.preventDefault();
+
+                if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                    alert('මතක් කරලා ඔයාගේ Google Script URL එක Code එකට ඇතුලත් කරන්න!');
+                    return;
+                }
+
+                submitBtn.innerText = 'Sending...';
+                submitBtn.disabled = true;
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: new FormData(sheetForm)
+                })
+                    .then(response => {
+                        formMsg.style.display = 'block';
+                        formMsg.style.color = '#10B981'; // Green color for success
+                        formMsg.innerText = 'Message saved to Excel (Google Sheets) successfully!';
+                        sheetForm.reset();
+                        submitBtn.innerText = 'Send Message';
+                        submitBtn.disabled = false;
+                    })
+                    .catch(error => {
+                        formMsg.style.display = 'block';
+                        formMsg.style.color = '#EF4444'; // Red color for error
+                        formMsg.innerText = 'Something went wrong. Please try again.';
+                        submitBtn.innerText = 'Send Message';
+                        submitBtn.disabled = false;
+                    });
+            });
+
+            // Milestone Navigation Logic
+            function showMilestone() {
+                const val = document.getElementById('milestone-dropdown').value;
+                if (val) {
+                    highlightMilestone(val);
+                }
+            }
+
+            function highlightMilestone(id) {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const card = el.querySelector('.timeline-content') || el;
+                    const originalBoxShadow = card.style.boxShadow;
+                    card.style.boxShadow = '0 0 30px var(--primary-color)';
+                    card.style.transition = 'box-shadow 0.5s ease';
+                    const select = document.getElementById('milestone-dropdown');
+                    if (select) select.value = id;
+                    setTimeout(() => {
+                        card.style.boxShadow = originalBoxShadow;
+                    }, 2000);
+                }
+            }
+
+            // Interactive Video Playback Logic
+            function playEmbeddedVideo() {
+                const box = document.getElementById('video-frame-box');
+                if (box) {
+                    box.innerHTML = `
+                        <iframe 
+                            src="https://www.youtube.com/embed/6OpWNguj5l8?autoplay=1&enablejsapi=1" 
+                            title="WorkWave Project Video Demonstration" 
+                            frameborder="0" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+                        </iframe>
+                    `;
+                }
+            }
+
+            // Documents Navigation Logic
+            function scrollToDocument() {
+                const val = document.getElementById('doc-dropdown').value;
+                if (val) {
+                    highlightDoc(val);
+                }
+            }
+
+            function highlightDoc(id) {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const originalBoxShadow = el.style.boxShadow;
+                    el.style.boxShadow = '0 0 30px var(--primary-color)';
+                    el.style.transition = 'box-shadow 0.5s ease';
+                    const select = document.getElementById('doc-dropdown');
+                    if (select) select.value = id;
+                    setTimeout(() => {
+                        el.style.boxShadow = originalBoxShadow;
+                    }, 2000);
+                }
+            }
+
+
+
+            // Theme Toggle Logic
+            const themeBtn = document.getElementById('theme-toggle-btn');
+            function toggleTheme() {
+                document.body.classList.toggle('light-theme');
+                if (document.body.classList.contains('light-theme')) {
+                    themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+
+            // Load theme preference on load
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-theme');
+                themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+
+            // Smooth scrolling logic for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            // Domain Tabs Logic
+            function openDomainTab(tabId, clickedBtn = null) {
+                // Hide all tab panes
+                const panes = document.querySelectorAll('.tab-pane');
+                panes.forEach(pane => {
+                    pane.style.display = 'none';
+                    pane.classList.remove('active');
+                });
+
+                // Remove active class from all tab buttons
+                const buttons = document.querySelectorAll('.tab-btn');
+                buttons.forEach(btn => btn.classList.remove('active'));
+
+                // Show selected tab pane
+                const selectedPane = document.getElementById(tabId);
+                if (selectedPane) {
+                    selectedPane.style.display = 'block';
+                    setTimeout(() => selectedPane.classList.add('active'), 10);
+                }
+
+                // Activate corresponding sidebar button
+                if (clickedBtn && clickedBtn.classList && clickedBtn.classList.contains('tab-btn')) {
+                    clickedBtn.classList.add('active');
+                } else {
+                    const matchingBtn = document.querySelector(`.tab-btn[onclick*="${tabId}"]`);
+                    if (matchingBtn) matchingBtn.classList.add('active');
+                }
+
+                // Scroll to domain section smoothly
+                const domainSec = document.getElementById('domain');
+                if (domainSec) {
+                    domainSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            // Study Procedure Interactive & Modal Popup Logic
+            const procData = [
+                {
+                    phase: "Phase 01",
+                    title: "Requirements Gathering",
+                    iconUrl: "https://img.icons8.com/color/96/survey.png",
+                    desc: "The team identified user needs across four areas: service discovery, provider management, appointment coordination, and demand forecasting.",
+                    fullText: "The team identified user needs across four core functional areas: service discovery, provider management, appointment coordination, and demand forecasting. Functional needs included submitting requests, matching providers, receiving quotations, checking schedules, and administering platform activity.",
+                    keyPoints: [
+                        "Service discovery and streamlined customer request intake",
+                        "Provider profiling, verification, and capability management",
+                        "Appointment scheduling, booking status tracking, and route coordination",
+                        "Platform governance, demand prediction, and administrative auditing"
+                    ]
+                },
+                {
+                    phase: "Phase 02",
+                    title: "Research Problem & Objectives",
+                    iconUrl: "https://img.icons8.com/color/96/goal--v1.png",
+                    desc: "The project addresses fragmented service discovery and coordination, aiming to build a connected AI-assisted workflow.",
+                    fullText: "The project addresses fragmented service discovery and coordination in local marketplaces. Its primary aim was to explore how AI-assisted discovery, predictive intelligence, and automated administrative tools could cohesively support a seamless, connected service-booking workflow.",
+                    keyPoints: [
+                        "Eliminate communication silos between service seekers and local providers",
+                        "Develop AI-driven contextual matching and dynamic demand forecasting",
+                        "Integrate trust verification and dispute-resilient governance mechanisms",
+                        "Empower micro-entrepreneurs with intelligent portfolio tooling"
+                    ]
+                },
+                {
+                    phase: "Phase 03",
+                    title: "System Design",
+                    iconUrl: "https://img.icons8.com/color/96/flow-chart.png",
+                    desc: "Brings together seeker/provider apps, component services, AI engines, shared data, and environmental context.",
+                    fullText: "The proposed design brings together seeker and provider applications, component microservices, AI functions, shared platform data, and external context such as route networks, real-time weather feeds, and calendar/holiday APIs. The diagram represents a robust logical architecture; final deployment details require confirmation.",
+                    keyPoints: [
+                        "Decoupled microservices architecture unified through an API Gateway",
+                        "Shared persistence layer utilizing MongoDB with structured schema constraints",
+                        "Integration with external APIs (Open-Meteo weather and Calendarific public holidays)",
+                        "Real-time event notification pipeline powered by WebSockets / Socket.io"
+                    ]
+                },
+                {
+                    phase: "Phase 04",
+                    title: "Component Design",
+                    iconUrl: "https://img.icons8.com/color/96/module.png",
+                    desc: "Four specialized research components contribute synergistically to power the WorkWave platform.",
+                    fullText: "Four research components contribute to the platform: Service Seeker, Delay-Aware Scheduling and Coordination, Predictive Demand Forecasting and Administration/Governance, and AI-Driven Provider Services.",
+                    keyPoints: [
+                        "Service Seeker: Natural language request parsing & quotation comparison",
+                        "Delay-Aware Scheduling: Feasibility checking, transit buffering, & calendar alignment",
+                        "Predictive Demand Forecasting & Admin: Time-series forecasting & trust oversight",
+                        "AI-Driven Provider Services: CV portfolio verification & automated ad generation"
+                    ]
+                },
+                {
+                    phase: "Phase 05",
+                    title: "AI Integration",
+                    iconUrl: "https://img.icons8.com/color/96/artificial-intelligence.png",
+                    desc: "AI supports NLP understanding, image cues, ranking, duration estimation, and demand forecasting as decision support.",
+                    fullText: "AI supports natural-language request understanding, image-based service cues, provider ranking, service-duration estimation, demand forecasts, and portfolio image checks. Model outputs are strictly treated as decision support—not as automatic proof of identity, job completion, or booking eligibility.",
+                    keyPoints: [
+                        "NLP models for semantic intent extraction from unstructured multilingual requests",
+                        "Computer Vision (MobileNetV2 / PyTorch) for verifying portfolio work authenticity",
+                        "Random Forest & Machine Learning estimators for predictive duration & pricing",
+                        "Human-in-the-loop validation and confidence score thresholding"
+                    ]
+                },
+                {
+                    phase: "Phase 06",
+                    title: "Implementation Approach",
+                    iconUrl: "https://img.icons8.com/color/96/programming.png",
+                    desc: "APIs, backend services, model-serving functions, and platform data unified via shared taxonomy.",
+                    fullText: "The component work describes APIs and backend microservices, model-serving functions, platform data stores, and external integrations. A shared taxonomy, consistent global identifiers, JWT authentication, and documented service interfaces are vital for joining the components.",
+                    keyPoints: [
+                        "Node.js & Express RESTful services paired with Python (Flask/FastAPI) ML endpoints",
+                        "React Native (Expo) mobile interfaces and React.js administrative dashboard",
+                        "Standardized API contracts and schema serialization for interoperability",
+                        "Stateless JWT security enforcement across microservice endpoints"
+                    ]
+                },
+                {
+                    phase: "Phase 07",
+                    title: "Integration Workflow",
+                    iconUrl: "https://img.icons8.com/color/96/workflow.png",
+                    desc: "End-to-end seeker intake, clarification, provider matching, quotations, scheduling, and verified completion.",
+                    fullText: "A seeker submits a request; the platform clarifies and structures it, finds candidate providers, receives a quotation, checks schedule feasibility, and supports booking. Completion and feedback can inform administration and future analysis.",
+                    keyPoints: [
+                        "Step 1: Seeker request submission with clarifying conversational prompts",
+                        "Step 2: Automated candidate matching and dynamic quotation aggregation",
+                        "Step 3: Multi-constraint schedule evaluation and instant booking confirmation",
+                        "Step 4: Post-completion reviews and continuous feedback ingestion for model retraining"
+                    ]
+                },
+                {
+                    phase: "Phase 08",
+                    title: "Testing & Evaluation",
+                    iconUrl: "https://img.icons8.com/color/96/approval.png",
+                    desc: "Rigorous testing of request processing, rankings, model performance, forecasting, and schedule logic.",
+                    fullText: "Component reports describe tests or evaluations for functions such as request processing, provider ranking, model performance, forecasting, and schedule logic. The portfolio distinguishes component-level evidence from a full end-to-end test: a complete shared integration/UAT record was prepared as a future testing framework.",
+                    keyPoints: [
+                        "High-concurrency load testing (50 concurrent threads with 0% failure rate under 400ms latency)",
+                        "Machine learning accuracy, precision, and recall evaluations",
+                        "Component unit tests and integration contract verification",
+                        "Comprehensive end-to-end User Acceptance Testing (UAT) audit checklist"
+                    ]
+                }
+            ];
+
+            function showProcedure(index) {
+                // Remove active class from all nodes
+                document.querySelectorAll('.proc-node').forEach(node => node.classList.remove('active'));
+
+                // Set clicked node active
+                const clickedNode = document.querySelector(`.proc-node[data-index="${index}"]`);
+                if (clickedNode) clickedNode.classList.add('active');
+
+                const item = procData[index];
+                if (!item) return;
+
+                // Update Central Circle Content
+                const centerContent = document.getElementById('proc-center');
+                if (centerContent) {
+                    centerContent.classList.remove('pulse');
+                    void centerContent.offsetWidth; // trigger reflow
+                    centerContent.classList.add('pulse');
+
+                    centerContent.style.opacity = '0';
+                    setTimeout(() => {
+                        centerContent.innerHTML = `
+                            <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color);">${item.phase}</span>
+                            <h3 style="margin: 6px 0 10px; font-size: 1.35rem;">${item.title}</h3>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted);">${item.desc}</p>
+                            <span style="margin-top: 12px; font-size: 0.85rem; color: var(--primary-color); font-weight: 600; text-decoration: underline; cursor: pointer;">Click to Read Details &rarr;</span>
+                        `;
+                        centerContent.style.opacity = '1';
+                    }, 180);
+                }
+
+                // Populate and Open Modal Popup
+                const spIcon = document.getElementById('sp-icon');
+                const spPhaseTag = document.getElementById('sp-phase-tag');
+                const spTitle = document.getElementById('sp-title');
+                const spContent = document.getElementById('sp-content');
+
+                if (spIcon) {
+                    spIcon.innerHTML = `<img src="${item.iconUrl}" alt="${item.title}" style="width: 48px; height: 48px; object-fit: contain;">`;
+                }
+                if (spPhaseTag) spPhaseTag.innerText = item.phase;
+                if (spTitle) spTitle.innerText = item.title;
+
+                if (spContent) {
+                    const keyPointsHtml = item.keyPoints.map(pt => `
+                        <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; line-height: 1.5;">
+                            <i class="fa-solid fa-circle-check" style="color: #10b981; margin-top: 5px; font-size: 0.95rem; flex-shrink: 0;"></i>
+                            <span>${pt}</span>
+                        </li>
+                    `).join('');
+
+                    spContent.innerHTML = `
+                        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-color); margin-bottom: 22px; background: rgba(255,255,255,0.03); padding: 18px 20px; border-radius: 12px; border-left: 3px solid ${item.iconColor};">
+                            ${item.fullText}
+                        </p>
+                        <h4 style="color: #fff; font-size: 1.15rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-list-check" style="color: var(--primary-color);"></i> Scope & Research Activities:
+                        </h4>
+                        <ul style="list-style: none; padding: 16px 18px; background: rgba(0,0,0,0.25); border-radius: 12px; border: 1px solid var(--border-color); margin: 0;">
+                            ${keyPointsHtml}
+                        </ul>
+                    `;
+                }
+
+                const overlay = document.getElementById('modal-overlay');
+                const modal = document.getElementById('modal-popup');
+                if (overlay && modal) {
+                    overlay.classList.add('active');
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeProcedureModal() {
+                const overlay = document.getElementById('modal-overlay');
+                const modal = document.getElementById('modal-popup');
+                if (overlay) overlay.classList.remove('active');
+                if (modal) modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Close modal when pressing Escape key
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') closeProcedureModal();
+            });
+        </script>
+</body>
+
+</html>

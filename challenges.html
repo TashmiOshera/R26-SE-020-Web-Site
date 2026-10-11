@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges & Solutions | WorkWave Research</title>
+    <meta name="description" content="Technical, architectural, and algorithmic challenges addressed in the WorkWave project.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 130px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(250, 204, 21, 0.08) 0%, transparent 70%);
+        }
+
+        .back-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-nav-btn:hover {
+            background: var(--primary-color);
+            color: #0b1120;
+            border-color: var(--primary-color);
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <a href="index.html" class="logo">WorkWave.</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#home"><i class="fa-solid fa-house nav-icon"></i> Home</a></li>
+                
+                <!-- Domain Dropdown -->
+                <li class="nav-dropdown">
+                    <a href="index.html#domain" class="dropdown-trigger">
+                        <i class="fa-solid fa-diagram-project nav-icon"></i> Domain <i class="fa-solid fa-chevron-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#domain"><i class="fa-solid fa-book-open"></i> Literature Survey</a></li>
+                        <li><a href="index.html#domain"><i class="fa-solid fa-magnifying-glass-chart"></i> Research Gap</a></li>
+                        <li><a href="index.html#domain"><i class="fa-solid fa-bullseye"></i> Research Problem</a></li>
+                        <li><a href="index.html#domain"><i class="fa-solid fa-rocket"></i> Objectives</a></li>
+                        <li><a href="index.html#domain"><i class="fa-solid fa-gears"></i> Methodology</a></li>
+                        <li><a href="index.html#domain"><i class="fa-solid fa-lightbulb"></i> Contribution & Future Work</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a href="index.html#technologies"><i class="fa-solid fa-microchip"></i> Technologies Used</a></li>
+                        <li><a href="index.html#architecture"><i class="fa-solid fa-network-wired"></i> System Architecture</a></li>
+                        <li><a href="index.html#procedure"><i class="fa-solid fa-timeline"></i> Study Procedure (8 Phases)</a></li>
+                    </ul>
+                </li>
+
+                <!-- Contribution Direct Link -->
+                <li><a href="index.html#research-contribution"><i class="fa-solid fa-award nav-icon"></i> Contribution</a></li>
+
+                <!-- Challenges Active Link -->
+                <li><a href="challenges.html" style="color: var(--primary-color);"><i class="fa-solid fa-triangle-exclamation nav-icon"></i> Challenges</a></li>
+
+                <!-- Milestones Dropdown -->
+                <li class="nav-dropdown">
+                    <a href="index.html#milestones" class="dropdown-trigger">
+                        <i class="fa-solid fa-flag-checkered nav-icon"></i> Milestones <i class="fa-solid fa-chevron-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#ms-proposal"><i class="fa-solid fa-file-lines"></i> Project Proposal (12%)</a></li>
+                        <li><a href="index.html#ms-pp1"><i class="fa-solid fa-chart-column"></i> Progress Presentation-1 (15%)</a></li>
+                        <li><a href="index.html#ms-pp2"><i class="fa-solid fa-chart-line"></i> Progress Presentation-2 (18%)</a></li>
+                        <li><a href="index.html#ms-final"><i class="fa-solid fa-award"></i> Final Presentation & Viva (20%)</a></li>
+                    </ul>
+                </li>
+
+                <!-- Documents Dropdown -->
+                <li class="nav-dropdown">
+                    <a href="index.html#documents" class="dropdown-trigger">
+                        <i class="fa-solid fa-folder-open nav-icon"></i> Documents <i class="fa-solid fa-chevron-down caret-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#doc-charter"><i class="fa-solid fa-file-contract"></i> Project Charter</a></li>
+                        <li><a href="index.html#doc-proposal"><i class="fa-solid fa-file-lines"></i> Proposal Document</a></li>
+                        <li><a href="index.html#doc-checklist"><i class="fa-solid fa-list-check"></i> Checklist Documents</a></li>
+                        <li><a href="index.html#doc-final"><i class="fa-solid fa-book"></i> Final Documents</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="index.html#about"><i class="fa-solid fa-users nav-icon"></i> About Us</a></li>
+                <li><a href="index.html#contact" class="btn outline-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <a href="index.html" class="back-nav-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Main Project
+                </a>
+                <h1 class="section-title" style="margin-bottom: 20px;">
+                    Challenges & <span>How We Addressed Them</span>
+                </h1>
+                <p style="text-align: center; color: var(--text-muted); max-width: 820px; margin: 0 auto; font-size: 1.15rem; line-height: 1.7;">
+                    A comprehensive technical breakdown of key engineering, integration, and algorithmic hurdles encountered during the research and development of the WorkWave platform, alongside our strategic solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Challenges Grid Section -->
+        <section style="padding: 20px 0 100px;">
+            <div class="container">
+                <div class="challenges-grid">
+                    <!-- Challenge 1 -->
+                    <div class="challenge-card hover-lift fade-in">
+                        <div class="challenge-header">
+                            <span class="challenge-num">01</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Unstructured Service Requests</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>Users may describe needs in different languages, regional dialects, or informal wording with ambiguous intent.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>We designed intelligent request processing pipelines to extract key intent details and automatically ask dynamic follow-up questions when required information is missing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 2 -->
+                    <div class="challenge-card hover-lift fade-in delay-1">
+                        <div class="challenge-header">
+                            <span class="challenge-num">02</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Unclear or Incomplete Requirements</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>The four core research components initially carried distinct individual scopes, operational boundaries, and divergent assumptions.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>We harmonized all modules into a unified, shared service-booking workflow and strictly mapped the mutual data exchange schemas and API contracts each component relies on.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 3 -->
+                    <div class="challenge-card hover-lift fade-in delay-2">
+                        <div class="challenge-header">
+                            <span class="challenge-num">03</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Connecting Independently Developed Components</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>Disparities across APIs, heterogeneous data structures, auth mechanisms, and decoupled deployment environments hindered seamless interoperability.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>We standardized integration requirements around uniform global identifiers, consistent service taxonomies, well-documented API specifications, and shared lifecycle booking states.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 4 -->
+                    <div class="challenge-card hover-lift fade-in">
+                        <div class="challenge-header">
+                            <span class="challenge-num">04</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Uncertain AI Predictions</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>ML-based duration estimations, provider matching rankings, and demand forecasts carry natural statistical variance and potential error margins.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>We treat AI inferences strictly as decision-support signals, augmenting them with deterministic fallback checks, confidence thresholds, interpretability factors, and human-in-the-loop review.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 5 -->
+                    <div class="challenge-card hover-lift fade-in delay-1">
+                        <div class="challenge-header">
+                            <span class="challenge-num">05</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-calendar-xmark"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Scheduling Conflicts & Travel Uncertainty</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>Proposed bookings risk overlapping with prior commitments or leaving inadequate transit time between geographically dispersed job sites.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>Our scheduling engine cross-verifies real-time calendar availability, provider shift hours, route transit estimates, and safety buffers, evaluating feasibility or suggesting optimal alternatives.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 6 -->
+                    <div class="challenge-card hover-lift fade-in delay-2">
+                        <div class="challenge-header">
+                            <span class="challenge-num">06</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Limited or Inconsistent Data</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>Predictive model quality, precision, and generalizability heavily depend on access to comprehensive, representative, and clean local marketplace datasets.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>Identified as a critical study limitation; established a robust data governance framework documenting rigorous data hygiene, coverage baselines, and validation on unseen holdout datasets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 7 -->
+                    <div class="challenge-card hover-lift fade-in">
+                        <div class="challenge-header">
+                            <span class="challenge-num">07</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Evaluating Model Performance Fairly</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>High theoretical benchmark accuracy scores on isolated validation sets often fail to represent true end-user utility under real marketplace fluctuations.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>We present granular component-level evaluation metrics transparently, explicitly noting where competitive baselines, broader field validation, and consistent empirical evidence are required.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 8 -->
+                    <div class="challenge-card hover-lift fade-in delay-1">
+                        <div class="challenge-header">
+                            <span class="challenge-num">08</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Image Quality & Authenticity Concerns</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>Suboptimal lighting, low resolution, blurs, or spoofed images during provider onboarding or portfolio uploads risk severe misclassification.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>Implemented rigorous multi-stage image verification checks and review pipelines, benchmarked with real-world edge cases to continuously minimize false-acceptance and rejection rates.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 9 -->
+                    <div class="challenge-card hover-lift fade-in delay-2">
+                        <div class="challenge-header">
+                            <span class="challenge-num">09</span>
+                            <div class="challenge-icon-box">
+                                <i class="fa-solid fa-vial-circle-check"></i>
+                            </div>
+                        </div>
+                        <h3 class="challenge-title">Incomplete End-to-End Testing Evidence</h3>
+                        <div class="challenge-part challenge-problem">
+                            <div class="part-label"><i class="fa-solid fa-triangle-exclamation"></i> Challenge</div>
+                            <p>Individual component-level test suites were thoroughly executed, yet a unified, multi-service User Acceptance Testing (UAT) audit record remained uncompleted.</p>
+                        </div>
+                        <div class="challenge-part challenge-solution">
+                            <div class="part-label"><i class="fa-solid fa-circle-check"></i> How We Addressed It</div>
+                            <p>Structured an exhaustive integrated testing matrix governing the complete end-to-end lifecycle: request intake, quote generation, scheduling, booking confirmation, execution, and admin auditing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="index.html#research-contribution" class="btn primary-btn">
+                        <i class="fa-solid fa-arrow-left"></i> Return to Main Overview
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 WorkWave Project Team. Created for Final Year Assessment.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-theme');
+            themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+    </script>
+</body>
+
+</html>
