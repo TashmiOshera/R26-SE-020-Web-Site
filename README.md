@@ -1,187 +1,332 @@
-# WorkWave — AI-Powered MicroLocal Service Platform
-> **Research Project Code:** R26-SE-020  
-> **Repository:** [R26-SE-020-Web-Site](https://github.com/TashmiOshera/R26-SE-020-Web-Site)  
-> **Official Showcase Website & Documentation**
+# 🌊 WorkWave — AI-Powered MicroLocal Service Platform
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://en.wikipedia.org/wiki/HTML5)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://en.wikipedia.org/wiki/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Python](https://img.shields.io/badge/Python_3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+**An AI-driven platform connecting local service seekers with skilled micro-entrepreneurs across Sri Lanka.**
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/Research-R26--SE--020-2563EB?style=for-the-badge" alt="Research Project"/>
+  <img src="https://img.shields.io/badge/Academic_Year-2026-7C3AED?style=for-the-badge" alt="Academic Year"/>
+  <img src="https://img.shields.io/badge/Platform-Web_%26_Mobile-059669?style=for-the-badge" alt="Web and Mobile Platform"/>
+</p>
 
-## 📌 Executive Summary
-
-**WorkWave** is an integrated, AI-driven MicroLocal service marketplace engineered to bridge the accessibility, coordination, and trust gap between local informal micro-entrepreneurs (plumbers, electricians, carpenters, painters, cleaners) and service seekers within localized geographic regions.
-
-Traditional local service platforms suffer from fragmented communication, opaque pricing, unreliable appointment scheduling, and absence of predictive demand insights. WorkWave introduces a unified multi-component architecture combining:
-1. **Intelligent Service Discovery & Multimodal Request Diagnostics**
-2. **Context-Aware Provider Recommendation & Trust Governance**
-3. **Automated Provider Portfolio & Smart Advertisement Generation**
-4. **Time-Series Service Demand Forecasting with External Contextual Features**
+<p align="center">
+  <a href="https://github.com/TashmiOshera/R26-SE-020-Web-Site">GitHub Repository</a> ·
+  <a href="challenges.html">Technical Challenges</a> ·
+  <a href="https://youtu.be/6OpWNguj5l8">System Demonstration</a>
+</p>
 
 ---
 
-## 🏗️ System Architecture Overview
+## 📌 1. Project Overview
+
+**WorkWave** is an AI-powered micro-local service platform developed as part of the final-year Software Engineering research project **R26-SE-020**.
+
+The platform aims to bridge the gap between local service seekers and informal micro-entrepreneurs by improving service discovery, provider recommendations, communication, and access to local service opportunities.
+
+Traditional local service discovery often relies on informal communication, manual searching, and fragmented online listings. These approaches can make it difficult for users to describe their requirements, identify suitable providers, assess trustworthiness, and coordinate service delivery.
+
+WorkWave addresses these challenges through an integrated platform combining intelligent service discovery, multimodal request analysis, provider recommendation, automated content generation, and data-driven demand insights.
+
+### 🎯 Project Objectives
+
+- Simplify local service discovery through AI-assisted request analysis.
+- Support service requests submitted using text and images.
+- Recommend relevant service providers using contextual information.
+- Help micro-entrepreneurs present their services more effectively.
+- Improve communication and coordination between seekers and providers.
+- Explore data-driven approaches to understanding local service demand.
+
+## ✨ 2. Key Research Components
+
+| Component | Description |
+|---|---|
+| 🔍 Intelligent Service Discovery | Analyses service requests and helps identify relevant service categories. |
+| 🖼️ Multimodal Request Analysis | Uses text and image inputs to support service identification and request clarification. |
+| 🤝 Provider Recommendation | Supports provider matching using service relevance and contextual factors. |
+| 📝 AI-Assisted Content Generation | Supports the creation of structured service descriptions and promotional content. |
+| 📊 Service Demand Insights | Explores demand patterns and forecasting using historical and contextual information. |
+
+## 🏗️ 3. System Architecture
+
+The proposed architecture separates client applications, backend services, and AI/ML capabilities to support modular development and integration.
 
 ```mermaid
-graph TD
-    subgraph Client_Applications ["Client Applications"]
-        SeekerApp["📱 Seeker Mobile App (React Native)"]
-        ProviderApp["📱 Provider Mobile App (React Native)"]
-        AdminWeb["💻 Admin Dashboard (React.js)"]
+flowchart TB
+    subgraph Clients["Client Applications"]
+        S["Seeker Mobile App"]
+        P["Provider Mobile App"]
+        A["Admin Web Dashboard"]
     end
 
-    subgraph API_Gateway_Layer ["API Gateway & Routing Layer"]
-        Gateway["⚡ API Gateway (Node.js / Express / Socket.io)"]
+    G["Backend API Gateway"]
+
+    subgraph Backend["Backend Services"]
+        SS["Seeker & Request Service"]
+        PS["Provider & Profile Service"]
+        CS["Coordination & Scheduling"]
+        DS["Demand Insights Service"]
     end
 
-    subgraph Microservices_Core ["Core Microservices"]
-        SeekerService["🔍 Seeker & Request Service"]
-        ProviderService["🛠️ Provider & Profile Service"]
-        CoordinationService["📅 Appointment & Route Service"]
-        DemandService["📊 Demand Insights Service"]
+    subgraph AI["AI & Machine Learning"]
+        CV["Image Classification"]
+        NLP["Text Classification & Matching"]
+        ML["Demand Forecasting"]
+        GEN["AI-Assisted Content Generation"]
     end
 
-    subgraph AI_Intelligence_Engine ["AI & Machine Learning Engine"]
-        CVService["👁️ Computer Vision & Diagnostics (PyTorch / ResNet)"]
-        NLPService["📝 NLP & Requirement Matching (Scikit-Learn / TF-IDF)"]
-        ForecastingService["📈 Demand Forecasting (Random Forest / Time-Series)"]
-    end
+    DB[("Application Database")]
+    EXT["External Data & Notification Services"]
 
-    subgraph External_Services ["External Context & Integrations"]
-        WeatherAPI["⛅ Open-Meteo Weather API"]
-        HolidayAPI["🗓️ Calendarific Holiday API"]
-        EmailService["✉️ Nodemailer / SMTP"]
-    end
+    S --> G
+    P --> G
+    A --> G
 
-    Client_Applications --> Gateway
-    Gateway --> Microservices_Core
-    Microservices_Core <--> AI_Intelligence_Engine
-    DemandService <--> External_Services
+    G --> SS
+    G --> PS
+    G --> CS
+    G --> DS
+
+    SS --> CV
+    SS --> NLP
+    PS --> GEN
+    DS --> ML
+
+    SS <--> DB
+    PS <--> DB
+    CS <--> DB
+    DS <--> DB
+
+    DS <--> EXT
 ```
 
----
+*Note: This diagram represents the high-level system architecture. Actual service boundaries and integrations should be verified against the final implementation.*
 
-## 🔬 Research Contributions & Key Innovations
+## 🧠 4. AI & Machine Learning Approach
 
-### 1. Primary Scientific Contribution
-* **Multi-Component Architecture:** Designed and implemented a scalable, fault-tolerant local service marketplace combining computer vision diagnostics, NLP-driven provider matchmaking, and contextual demand forecasting into an integrated lifecycle workflow.
-* **Empowering Micro-Entrepreneurs:** Removes technical and marketing barriers for informal service providers through automated profile portfolio synthesis, OCR certificate validation, and smart advertisement generation.
+### Computer Vision
 
-### 2. Next Milestones & Future Work
-* Validating integration contracts and shared schemas across all microservices.
-* Systematic end-to-end load testing under high concurrency.
-* Enhancing traceability of model attribution, bias mitigation, and reported demand forecasting metrics.
+Image classification supports the identification of service-related categories from user-submitted photographs. The research implementation explores convolutional neural network models, including MobileNetV2 and EfficientNetB0.
 
----
+### Natural Language Processing
 
-## ⚡ 9 Core Technical Challenges & Solutions
+Text classification and requirement matching help interpret service descriptions and identify relevant service categories. TF-IDF vectorization and similarity-based techniques can support text representation and matching.
 
-Detailed in the standalone [Challenges Page](challenges.html):
+### Provider Recommendation
 
-| # | Challenge | Core Engineering Hurdle | Technical Solution Implemented |
+Provider recommendations can consider multiple factors, including:
+
+- **Service relevance** — how closely the provider's skills match the request.
+- **Proximity** — the geographical relationship between seeker and provider.
+- **Trust** — available ratings, reviews, and verification information.
+- **Availability** — the provider's ability to undertake the requested service.
+
+### Demand Insights
+
+Demand forecasting explores historical service activity and contextual variables to identify patterns that may help inform local service planning.
+
+*Model performance, forecasting results, and integration claims should be reported using verified experimental results from the final research implementation.*
+
+## 🔬 5. Research Contributions & Future Work
+
+### Research Contributions
+
+- **Integrated Service Discovery:** A research-oriented approach to combining request analysis and local service discovery.
+- **Multimodal Input:** Exploration of text and image inputs to make service requests easier to express.
+- **Context-Aware Recommendations:** Consideration of relevance, location, trust, and availability when recommending providers.
+- **Micro-Entrepreneur Support:** AI-assisted tools intended to improve service presentation and accessibility.
+- **Demand Intelligence:** Exploration of predictive insights for understanding localized service demand.
+
+### Future Work
+
+- Validate interfaces and shared data schemas across system components.
+- Conduct documented end-to-end and integration testing.
+- Evaluate AI models using appropriate metrics and representative real-world data.
+- Improve recommendation relevance, fairness, and explainability.
+- Validate demand forecasting results against suitable baselines.
+- Evaluate scalability, response time, reliability, and usability under realistic conditions.
+
+## ⚙️ 6. Technical Challenges & Engineering Approaches
+
+The project addresses a range of technical challenges associated with AI-driven local service platforms.
+
+| No. | Challenge | Engineering Approach |
+|:---:|---|---|
+| 01 | Multimodal request intake | Combine image classification, text analysis, and guided requirement collection. |
+| 02 | Provider cold start | Explore skill similarity and contextual ranking when historical feedback is limited. |
+| 03 | Service advertisement creation | Generate structured service descriptions and promotional content. |
+| 04 | Demand forecasting | Explore predictive models incorporating historical and contextual features. |
+| 05 | Booking concurrency | Validate scheduling constraints and prevent conflicting appointments. |
+| 06 | Real-time communication | Use event-driven communication mechanisms where implemented. |
+| 07 | Provider trust and verification | Explore identity, credential, and image verification mechanisms. |
+| 08 | Unstable connectivity | Investigate offline storage and synchronization strategies where applicable. |
+| 09 | Integration and scalability | Validate API contracts, component boundaries, and service communication. |
+
+For a more detailed overview, see the [Technical Challenges page](challenges.html).
+
+## 🛠️ 7. Technology Stack
+
+### Frontend & Client Applications
+
+- React Native with Expo
+- React.js
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+
+### Backend & Communication
+
+- Node.js
+- Express.js
+- REST APIs
+- Socket.IO
+- JWT-based authentication
+- Bcrypt password hashing
+
+### AI & Machine Learning
+
+- Python
+- FastAPI
+- TensorFlow/Keras-based image classification models
+- MobileNetV2
+- EfficientNetB0
+- Scikit-learn
+- TF-IDF and cosine similarity
+- Pandas and NumPy
+
+### Data & Integrations
+
+- MongoDB
+- Open-Meteo Weather API
+- Calendarific Holiday API
+- SMTP-based email services
+
+*The listed technologies describe the project stack and research approaches. Individual dependencies and integrations should be confirmed against the final source code.*
+
+## 👥 8. Research Team
+
+**Group ID: R26-SE-020**
+
+| Research Team Member | Student ID | Role | Profiles |
 |---|---|---|---|
-| **01** | Multimodal Request Intake | Unclear service descriptions & low-quality user photos | Hybrid CV defect recognition + structured NLP prompts for prompt triage |
-| **02** | Cold-Start Matching | New providers lack historic reviews and rating metrics | Hybrid collaborative filtering + skill-tag similarity weighting & proximity |
-| **03** | Automated Ad Generation | Non-standard service photos and inconsistent branding | Template synthesis engine + automated caption & badge generation |
-| **04** | Time-Series Demand Forecasting | Highly erratic booking spikes influenced by external events | Multi-variable Random Forest combining weather, holidays, and localized trends |
-| **05** | Distributed Concurrency | Simultaneous booking clashes during peak hours | Pessimistic slot locking + distributed transactional state coordination |
-| **06** | Real-Time Sync | Dynamic schedule changes and live GPS updates | Socket.io WebSockets with heartbeat connection recovery & Redis caching |
-| **07** | Fraud & Trust Verification | Duplicate provider registrations and fabricated certificates | Tesseract.js OCR credential inspection + perceptual image hashing |
-| **08** | Offline Capability | Unstable network connectivity in localized transit | SQLite offline queuing with delta-synchronization upon reconnect |
-| **09** | Architecture Scalability | Microservice cross-chatter latency | Lightweight API Gateway routing + decoupled asynchronous event pipelines |
+| K.M.J.P. Kumarasekara | IT22112064 | Trainee Software Engineer | [GitHub](https://github.com/jeewa-hash) · [LinkedIn](https://www.linkedin.com/in/jeewanthi-kumarasekara-99143928a/) |
+| K.A.T. Oshera | IT22065612 | Trainee Software Engineer | [GitHub](https://github.com/TashmiOshera) · [LinkedIn](https://www.linkedin.com/in/tashmi-oshera-868490330/) |
+| M.N.U. Silva | IT22169112 | Trainee Software Engineer | [GitHub](https://github.com/nethmiu) · [LinkedIn](https://www.linkedin.com/in/nethmiumaya/) |
+| W.A.C.S. Wijesinghe | IT22129376 | Trainee Software Engineer | [GitHub](https://github.com/chaveenn) · [LinkedIn](https://www.linkedin.com/in/chaveen-sewni-wijesinghe/) |
+
+## 📅 9. Project Milestones
+
+| Milestone | Date | Weight | Status |
+|---|---|---:|---|
+| Project Proposal | March 16, 2026 | 12% | Completed |
+| Progress Presentation 1 (PP1) | May 12, 2026 | 15% | Completed |
+| Progress Presentation 2 (PP2) | September 1, 2026 | 18% | Completed |
+| Final Presentation & Viva | October 21, 2026 | 20% | Scheduled |
+
+### 📚 Assessment Documents
+
+- [Project Proposal Documents](https://drive.google.com/drive/folders/1lgGaW6Vu-JRZ15jmahZR2x6BYfX3Rv-B?usp=drive_link)
+- [PP1 Documents](https://drive.google.com/file/d/1OXTCEsP_riWClib2lxXkumriyzUTIbKj/view?usp=drive_link)
+- [PP2 Documents](https://drive.google.com/file/d/1IK7O7Q-dQc-JSxxceD5zrectUZBdyb0S/view?usp=drive_link)
+- [Final Thesis & Supplementary Reports](https://drive.google.com/drive/folders/1tJDODSkHKVIW5s1x8e2m7Eh1hO0Wto3V?usp=drive_link)
+
+## 📖 10. Official Project Documentation
+
+| Document | Link |
+|---|---|
+| Project Charter | [View Document](https://drive.google.com/file/d/195VOMaFr6PDCBF_bRkzH_cRGe9ToHJ9k/view?usp=drive_link) |
+| Research Proposal | [View Document](https://drive.google.com/file/d/1c3sQJlBCfnrM2HPZztpfTbbzRtDOSnKj/view?usp=drive_link) |
+| Evaluation Checklists | [View Document](https://drive.google.com/file/d/12giA6Fq7ZAM08GNI-V_NlttXA8NzUwwp/view?usp=drive_link) |
+| Final Thesis & Supplementary Reports | [View Folder](https://drive.google.com/drive/folders/1tJDODSkHKVIW5s1x8e2m7Eh1hO0Wto3V?usp=drive_link) |
+
+## 🎥 11. System Demonstration
+
+Watch the project demonstration to explore the WorkWave platform and its research components.
+
+**[▶ Watch the WorkWave System Demonstration on YouTube](https://youtu.be/6OpWNguj5l8)**
+
+## 🚀 12. Run the Showcase Website Locally
+
+The repository contains the static showcase website built using HTML, CSS, and JavaScript.
+
+### Prerequisites
+
+- Git
+- A modern web browser
+- Visual Studio Code with Live Server, or Python
+
+### Step 1 — Clone the repository
+
+```bash
+git clone https://github.com/TashmiOshera/R26-SE-020-Web-Site.git
+cd R26-SE-020-Web-Site
+```
+
+### Step 2 — Navigate to the website directory
+
+```bash
+cd R26-SE-020_Web_Site
+```
+
+### Step 3 — Start the website
+
+**Option A: Visual Studio Code**
+
+1. Open the website folder in VS Code.
+2. Open `index.html`.
+3. Right-click the file and select **Open with Live Server**.
+
+**Option B: Python HTTP server**
+
+```bash
+python -m http.server 5500
+```
+
+Open the following address in your browser:
+
+```text
+http://localhost:5500
+```
+
+> These instructions apply to the static showcase website. Running the mobile applications, backend services, or ML services requires their respective dependencies and configuration.
+
+## 📁 13. Repository Structure
+
+```text
+R26-SE-020-Web-Site/
+├── README.md
+└── R26-SE-020_Web_Site/
+    ├── index.html
+    ├── old_index.html
+    ├── challenges.html
+    ├── old_style.css
+    ├── css/
+    │   └── style.css
+    ├── images/
+    │   ├── hero-bg.jpg
+    │   └── light-bg.jpg
+    └── img/
+        ├── chaveen.jpg
+        ├── domain-ai.png
+        ├── hero.jpg
+        ├── kumarasekara.png
+        ├── nethmi.png
+        ├── oshera.jpg
+        └── system-architecture.jpg
+```
+
+## 📄 14. License & Attribution
+
+WorkWave is an academic research project developed as part of the final-year Software Engineering research assessment at the Sri Lanka Institute of Information Technology (SLIIT).
+
+**Research Project Code:** R26-SE-020
+
+**Copyright © 2026 WorkWave Project Team.**
+
+All rights reserved unless otherwise stated. Third-party libraries, tools, and resources remain subject to their respective licenses.
 
 ---
 
-## 🛠️ Technology Stack
-
-### Frontend & Mobile
-* **Mobile Applications:** React Native (Expo)
-* **Web Admin Portal:** React.js
-* **Showcase Website:** Semantic HTML5, Vanilla CSS3 (Custom Design System), Modern JavaScript ES6+
-* **Icons & Visual Assets:** Font Awesome 6 Pro, Icons8 Authentic Color Graphics, Devicon
-
-### Backend & Microservices
-* **Core API Framework:** Node.js, Express.js
-* **Machine Learning Microservice:** Python 3.10+, FastAPI, Uvicorn
-* **Real-Time Communication:** Socket.io
-* **Authentication & Security:** JWT (JSON Web Tokens), Bcrypt password hashing
-* **Email & Notifications:** Nodemailer, SMTP
-
-### AI / Machine Learning
-* **Computer Vision:** PyTorch, Torchvision, Convolutional Neural Networks
-* **Natural Language Processing:** Scikit-learn, TF-IDF Vectorization, Cosine Similarity
-* **Time-Series & Regression:** Random Forest Regressor, Pandas, NumPy
-* **Optical Character Recognition (OCR):** Tesseract.js
-
-### External APIs
-* **Weather Intelligence:** Open-Meteo API
-* **Public Calendars & Holidays:** Calendarific API
-
----
-
-## 👥 Research Team (Group R26-SE-020)
-
-| Name | Student ID | Role | Profiles |
-|---|---|---|---|
-| **K.M.J.P. Kumarasekara** | IT22112064 | Trainee Software Engineer | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github)](https://github.com/jeewa-hash) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/jeewanthi-kumarasekara-99143928a/) |
-| **K.A.T. Oshera** | IT22065612 | Trainee Software Engineer | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github)](https://github.com/TashmiOshera) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/tashmi-oshera-868490330/) |
-| **M.N.U. Silva** | IT22169112 | Trainee Software Engineer | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github)](https://github.com/nethmiu) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/nethmiumaya/?isSelfProfile=false) |
-| **W.A.C.S. Wijesinghe** | IT22129376 | Trainee Software Engineer | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github)](https://github.com/chaveenn) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/chaveen-sewni-wijesinghe/) |
-
----
-
-## 📅 Project Milestones & Assessment
-
-| Milestone | Target Date | Allocated Weight | Status | Documents / Deliverables |
-|---|---|---|---|---|
-| **Project Proposal** | March 16, 2026 | 12% | Completed | [Proposal Documents](https://drive.google.com/drive/folders/1lgGaW6Vu-JRZ15jmahZR2x6BYfX3Rv-B?usp=drive_link) |
-| **Progress Presentation-1 (PP1)** | May 12, 2026 | 15% | Completed (50% Build) | [PP1 Documents](https://drive.google.com/file/d/1OXTCEsP_riWClib2lxXkumriyzUTIbKj/view?usp=drive_link) |
-| **Progress Presentation-2 (PP2)** | September 01, 2026 | 18% | Completed (90% Build) | [PP2 Documents](https://drive.google.com/file/d/1IK7O7Q-dQc-JSxxceD5zrectUZBdyb0S/view?usp=drive_link) |
-| **Final Presentation & Viva** | October 21, 2026 | 20% | Completed (100% Build) | [Final Thesis & 4 Sub-Docs](https://drive.google.com/drive/folders/1tJDODSkHKVIW5s1x8e2m7Eh1hO0Wto3V?usp=drive_link) |
-
----
-
-## 📂 Official Project Documentation
-
-1. **Project Charter:** [Google Drive Document](https://drive.google.com/file/d/195VOMaFr6PDCBF_bRkzH_cRGe9ToHJ9k/view?usp=drive_link)
-2. **Proposal Document:** [Google Drive Document](https://drive.google.com/file/d/1c3sQJlBCfnrM2HPZztpfTbbzRtDOSnKj/view?usp=drive_link)
-3. **Evaluation Checklists:** [Google Drive Document](https://drive.google.com/file/d/12giA6Fq7ZAM08GNI-V_NlttXA8NzUwwp/view?usp=drive_link)
-4. **Final Comprehensive Thesis & Supplementary Reports:** [Google Drive Folder](https://drive.google.com/drive/folders/1tJDODSkHKVIW5s1x8e2m7Eh1hO0Wto3V?usp=drive_link)
-
----
-
-## 🎥 Project Demonstration & Video Walkthrough
-
-Watch the complete end-to-end research and platform demonstration:
-* **YouTube Video:** [WorkWave System Demonstration](https://youtu.be/6OpWNguj5l8)
-
----
-
-## 🚀 How to Run the Showcase Website Locally
-
-Since the showcase site is built using standards-compliant vanilla web technologies:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/TashmiOshera/R26-SE-020-Web-Site.git
-   cd R26-SE-020-Web-Site
-   ```
-
-2. **Open with Live Server:**
-   * If using VS Code, right-click `index.html` and choose **Open with Live Server**.
-   * Alternatively, use Python's built-in HTTP server:
-     ```bash
-     python -m http.server 5500
-     ```
-   * Open your browser at: `http://localhost:5500`
-
----
-
-## 📄 License & Attribution
-
-This research project is developed as part of the Final Year Software Engineering Research Assessment (2026).  
-Copyright &copy; 2026 **WorkWave Project Team (Group R26-SE-020)**. All rights reserved.
+<p align="center">
+  <strong>WorkWave — Connecting Local Needs with Local Talent.</strong>
+  <br/>
+  <sub>Research • Innovation • Intelligent Service Discovery</sub>
+</p>
