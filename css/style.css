@@ -783,6 +783,103 @@ body.light-theme .dropdown-menu li a:hover {
     color: #000;
 }
 
+/* ===== Supervisor & Co-Supervisor Subsection ===== */
+.supervisor-section {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 40px 30px 35px;
+    background: linear-gradient(145deg, rgba(250, 204, 21, 0.04) 0%, rgba(245, 158, 11, 0.03) 50%, transparent 100%);
+    border: 1px solid rgba(250, 204, 21, 0.15);
+    border-radius: 20px;
+    position: relative;
+}
+
+.supervisor-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    padding-bottom: 18px;
+}
+
+.supervisor-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #F59E0B);
+    border-radius: 3px;
+}
+
+.supervisor-heading i {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+.supervisor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.supervisor-card {
+    position: relative;
+    border: 1.5px solid rgba(250, 204, 21, 0.3) !important;
+    overflow: visible;
+}
+
+.supervisor-card:hover {
+    border-color: rgba(250, 204, 21, 0.6) !important;
+    box-shadow: 0 12px 35px rgba(250, 204, 21, 0.12) !important;
+}
+
+.supervisor-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #F59E0B 100%);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+    z-index: 2;
+}
+
+.supervisor-badge.co-badge {
+    background: linear-gradient(135deg, #60A5FA 0%, #818CF8 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 600px) {
+    .supervisor-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+    }
+    
+    .supervisor-section {
+        padding: 35px 15px 30px;
+    }
+}
+
 .achievements-box {
     background: linear-gradient(135deg, rgba(250, 204, 21, 0.1) 0%, rgba(11, 17, 32, 0) 100%);
     border: 1px solid rgba(250, 204, 21, 0.3);
