@@ -970,47 +970,29 @@
 
         <!-- Scripts -->
         <script>
-            // Google Sheets Form Submission Logic
+            // Open an email draft with the contact form details.
             const sheetForm = document.getElementById('sheet-form');
-            const submitBtn = document.getElementById('submit-btn');
             const formMsg = document.getElementById('form-msg');
 
-            // ඔයා Google Sheet එකෙන් ගන්න URL එක මෙතන (quotes ඇතුලේ) දාන්න
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwcR8EoCaf4W9Ylqt8htb6vSzZ2nhsJMaCQxqW8Z7Pz7yHQp_zrdcKY01vCEgnoZ_c-/exec';
+            sheetForm.addEventListener('submit', event => {
+                event.preventDefault();
 
-            sheetForm.addEventListener('submit', e => {
-                e.preventDefault();
+                const formData = new FormData(sheetForm);
+                const subject = `WorkWave website message from ${formData.get('Name')}`;
+                const body = [
+                    `Name: ${formData.get('Name')}`,
+                    `Email: ${formData.get('Email')}`,
+                    '',
+                    'Message:',
+                    formData.get('Message')
+                ].join('\n');
+                const mailto = `mailto:osheratashmi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-                if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
-                    alert('මතක් කරලා ඔයාගේ Google Script URL එක Code එකට ඇතුලත් කරන්න!');
-                    return;
-                }
-
-                submitBtn.innerText = 'Sending...';
-                submitBtn.disabled = true;
-
-                fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: new FormData(sheetForm)
-                })
-                    .then(response => {
-                        formMsg.style.display = 'block';
-                        formMsg.style.color = '#10B981'; // Green color for success
-                        formMsg.innerText = 'Message saved to Excel (Google Sheets) successfully!';
-                        sheetForm.reset();
-                        submitBtn.innerText = 'Send Message';
-                        submitBtn.disabled = false;
-                    })
-                    .catch(error => {
-                        formMsg.style.display = 'block';
-                        formMsg.style.color = '#EF4444'; // Red color for error
-                        formMsg.innerText = 'Something went wrong. Please try again.';
-                        submitBtn.innerText = 'Send Message';
-                        submitBtn.disabled = false;
-                    });
+                formMsg.style.display = 'block';
+                formMsg.style.color = '#10B981';
+                formMsg.innerText = 'Opening your email app with the message ready. Please send it from there.';
+                window.location.href = mailto;
             });
-
             // Milestone Navigation Logic
             function showMilestone() {
                 const val = document.getElementById('milestone-dropdown').value;
